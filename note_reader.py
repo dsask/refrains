@@ -146,11 +146,18 @@ def create_cutoffs(lines):
         else:
             cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*0.25))
             cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*0.75))
+            cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*1.25))
+            cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*1.75))
+            cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*2.25))
+            cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*2.75))
+            cutoffs.append(this_line + (lines.loc[i-1,].gap_to_next*2.25))
     return cutoffs
 
 def map_blob_to_notes(y, cutoffs):
     ordered_notes = [
-        'C', 'B', 'A', 'G', 'F', 'E', 'D', 'C', 'B', 'A', 'G', 'F', 'E', 'D'
+        'C', 'B', 'A', 'G', 'F', 'E', 'D', 
+        'C', 'B', 'A', 'G', 'F', 'E', 'D', 
+        'C', 'B', 'A', 'G', 'F'
     ]
     for c, n in zip(cutoffs, ordered_notes):
         if y < c:
