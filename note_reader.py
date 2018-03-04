@@ -136,7 +136,7 @@ def create_cutoffs(lines):
     for i in lines.index:
         this_line = lines.loc[i,].intercept
         if i == 0:
-            cutoff.append(this_line - (lines.loc[i,].gap_to_next*2.25))
+            cutoffs.append(this_line - (lines.loc[i,].gap_to_next*2.25))
             cutoffs.append(this_line - (lines.loc[i,].gap_to_next*1.75))
             cutoffs.append(this_line - (lines.loc[i,].gap_to_next*1.25))
             cutoffs.append(this_line - (lines.loc[i,].gap_to_next*0.75))
